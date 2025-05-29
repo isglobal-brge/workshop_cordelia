@@ -6,9 +6,9 @@ title: "DataSHIELD CORDELIA Workshop"
 
 This website hosts the materials and exercises for the DataSHIELD workshop for the CORDELIA project. On it you will find reading materials, setup tutorials, workshop indications and practical exercises.
 
-The workshop is organized by [BRGE (Bioinformatics Research Group in Epidemiology)](https://brge.isglobal.org) from the [Barcelona Institute for Global Health (iSGlobal)](https://isglobal.org).
+The workshop is organized by [Bioinformatics Research Group in Epidemiology (BRGE)](https://brge.isglobal.org) from the [Barcelona Institute for Global Health (iSGlobal)](https://isglobal.org).
 
-## Getting Started
+# Getting Started
 
 All practical exercises will be conducted using the [public Opal demo server](https://opal-demo.obiba.org/). This server provides a fully functional DataSHIELD environment with sample datasets that workshop participants can use to replicate the examples.
 
@@ -29,7 +29,9 @@ install.packages("metafor")
 devtools::install_github("timcadman/ds-helper")
 ```
 
-## Schedule
+# Schedule
+
+**📅 Workshop Date: Friday, 30th May 2025**
 
 | Time          | Topic                                                    |
 |---------------|----------------------------------------------------------|
@@ -39,7 +41,7 @@ devtools::install_github("timcadman/ds-helper")
 
 ---
 
-## Workshop Materials
+# Workshop Materials
 
 **Ready to start?** Access the complete workshop materials here:
 

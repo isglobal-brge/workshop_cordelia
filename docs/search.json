@@ -74,7 +74,7 @@
     "href": "index.html",
     "title": "DataSHIELD CORDELIA Workshop",
     "section": "",
-    "text": "This website hosts the materials and exercises for the DataSHIELD workshop for the CORDELIA project. On it you will find reading materials, setup tutorials, workshop indications and practical exercises.\nThe workshop is organized by BRGE (Bioinformatics Research Group in Epidemiology) from the Barcelona Institute for Global Health (iSGlobal).\n\n\nAll practical exercises will be conducted using the public Opal demo server. This server provides a fully functional DataSHIELD environment with sample datasets that workshop participants can use to replicate the examples.\nLogin credentials for the demo server are:\n\nUsername: dsuser\nPassword: P@ssw0rd\n\nBefore starting, make sure to install the required R packages in your local machine:\ninstall.packages('DSI')\ninstall.packages('DSOpal')\n\ninstall.packages('dsBaseClient', repos=c(getOption('repos'), 'http://cran.datashield.org'), dependencies=TRUE)\n\ninstall.packages(\"metafor\")\ndevtools::install_github(\"timcadman/ds-helper\")\n\n\n\n\n\n\n\n\n\n\nTime\nTopic\n\n\n\n\n8:30 - 9:30\nIntroduction to DataSHIELD theory\n\n\n9:30 - 10:30\nWorkshop illustrating how to analyze CORDELIA data\n\n\n10:30 - 11:30\nHands-on exercises and practice\n\n\n\n\n\n\n\nReady to start? Access the complete workshop materials here:\n→ Go to the workshop materials"
+    "text": "This website hosts the materials and exercises for the DataSHIELD workshop for the CORDELIA project. On it you will find reading materials, setup tutorials, workshop indications and practical exercises.\nThe workshop is organized by BRGE (Bioinformatics Research Group in Epidemiology) from the Barcelona Institute for Global Health (iSGlobal).\n\n\nAll practical exercises will be conducted using the public Opal demo server. This server provides a fully functional DataSHIELD environment with sample datasets that workshop participants can use to replicate the examples.\nLogin credentials for the demo server are:\n\nUsername: dsuser\nPassword: P@ssw0rd\n\nBefore starting, make sure to install the required R packages in your local machine:\ninstall.packages('DSI')\ninstall.packages('DSOpal')\n\ninstall.packages('dsBaseClient', repos=c(getOption('repos'), 'http://cran.datashield.org'), dependencies=TRUE)\n\ninstall.packages(\"metafor\")\ndevtools::install_github(\"timcadman/ds-helper\")"
   },
   {
     "objectID": "index.html#getting-started",
@@ -82,19 +82,5 @@
     "title": "DataSHIELD CORDELIA Workshop",
     "section": "",
     "text": "All practical exercises will be conducted using the public Opal demo server. This server provides a fully functional DataSHIELD environment with sample datasets that workshop participants can use to replicate the examples.\nLogin credentials for the demo server are:\n\nUsername: dsuser\nPassword: P@ssw0rd\n\nBefore starting, make sure to install the required R packages in your local machine:\ninstall.packages('DSI')\ninstall.packages('DSOpal')\n\ninstall.packages('dsBaseClient', repos=c(getOption('repos'), 'http://cran.datashield.org'), dependencies=TRUE)\n\ninstall.packages(\"metafor\")\ndevtools::install_github(\"timcadman/ds-helper\")"
-  },
-  {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "DataSHIELD CORDELIA Workshop",
-    "section": "",
-    "text": "Time\nTopic\n\n\n\n\n8:30 - 9:30\nIntroduction to DataSHIELD theory\n\n\n9:30 - 10:30\nWorkshop illustrating how to analyze CORDELIA data\n\n\n10:30 - 11:30\nHands-on exercises and practice"
-  },
-  {
-    "objectID": "index.html#workshop-materials",
-    "href": "index.html#workshop-materials",
-    "title": "DataSHIELD CORDELIA Workshop",
-    "section": "",
-    "text": "Ready to start? Access the complete workshop materials here:\n→ Go to the workshop materials"
   }
 ]

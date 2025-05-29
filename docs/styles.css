@@ -5,3 +5,67 @@
 .title {
   color: #2c3e50;
 }
+
+/* R Code Output Styling - Light Yellow for Outputs */
+.cell-output,
+.cell-output-stdout,
+.cell-output-display {
+  background-color: #fffbf0;
+  border: 1px solid #f0e68c;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 8px 0;
+  max-height: 400px;
+  overflow-y: auto;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+/* Code blocks styling - Keep Grey for Input */
+pre.sourceCode {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+/* Output text styling - Remove conflicting styles */
+.cell-output pre {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: none;
+  overflow: visible;
+}
+
+/* Scrollbar styling for webkit browsers - Only for main containers */
+.cell-output::-webkit-scrollbar,
+.cell-output-stdout::-webkit-scrollbar,
+.cell-output-display::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cell-output::-webkit-scrollbar-track,
+.cell-output-stdout::-webkit-scrollbar-track,
+.cell-output-display::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.cell-output::-webkit-scrollbar-thumb,
+.cell-output-stdout::-webkit-scrollbar-thumb,
+.cell-output-display::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.cell-output::-webkit-scrollbar-thumb:hover,
+.cell-output-stdout::-webkit-scrollbar-thumb:hover,
+.cell-output-display::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
