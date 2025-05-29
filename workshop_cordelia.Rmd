@@ -1,14 +1,30 @@
 ---
-title: "DataSHIELD Workshop: Use case CORDELIA cohort, Friday 30th May 2025"
+title: "DataSHIELD Workshop: Use case CORDELIA cohort"
 output: html_notebook
 ---
-### INFORMATION FOR NEWCOMERS TO RSTUDIO NOTEBOOKS: 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = FALSE,
+  comment = "",
+  results = "hold",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+:::{.callout-tip}
+## 📚 INFORMATION FOR NEWCOMERS TO RSTUDIO NOTEBOOKS
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+:::
 
 # DataSHIELD for analyzing CORDELIA data
+
+:::{.callout-note}
+## 📋 Workshop Overview
 
 The plan for this workshop is as follows:
 
@@ -20,7 +36,7 @@ The plan for this workshop is as follows:
 - Data manipulation with dsHelper
 - Making graphs
 - Performing regression analysis
-
+:::
 
 ## Installing DataSHIELD
 
@@ -46,7 +62,7 @@ devtools::install_github("timcadman/ds-helper")
 
 Remember to load them into this R session using "library()" command:
 
-```{r}
+```{r, message = FALSE}
 library(DSI)
 library(DSOpal)
 library(dsBaseClient)
@@ -66,11 +82,19 @@ The login script has to be customized to fit the data you are trying to connect 
 
 The "builder <-" and "builder$append" functions are standard features.
 
+:::{.callout-tip}
+## 🔒 Data Privacy Note
+
 For this demonstration we are connecting to simulated data- but if it was data of real people, it would be very important for us not to be able to see individual patients' information.
+:::
 
-### Let's log in to the opal online portal to see what data there is available (https://opal-demo.obiba.org/#/project/CORDELIA) 
+:::{.callout-note}
+## 🌐 Opal Access
 
-We will use a subset of CORDELIA data set, in a data.frame with 196633 individuals of 38 harmonized variables.  This dataset does contain some NA values.
+Let's log in to the opal online portal to see what data there is available: [https://opal-demo.obiba.org/#/project/CORDELIA](https://opal-demo.obiba.org/#/project/CORDELIA)
+:::
+
+We will use a subset of CORDELIA data set, in a data.frame with 196633 individuals of 38 harmonized variables. This dataset does contain some NA values.
 
 For the ease of this workshop, we'll imagine that the data is hosted in a single Opal repository. The below code creates a local R object with the login details for each study:
 
@@ -109,7 +133,11 @@ We can see the type of object we have
 ds.class("res")
 ```
 
-Here you see one 'resource' rather than a dataframe in each study called 'D'. NOTE, if data would be stored as a Table rather than a 'resource' (e.g. csv file) we would get directly 'D' as a table. You can see the example in our bookdown: [https://isglobal-brge.github.io/resource_bookdown/datashield.html#demo](https://isglobal-brge.github.io/resource_bookdown/datashield.html#demo) 
+:::{.callout-note}
+## 📋 Resources vs Tables
+
+Here you see one 'resource' rather than a dataframe in each study called 'D'. NOTE, if data would be stored as a Table rather than a 'resource' (e.g. csv file) we would get directly 'D' as a table. You can see the example in our bookdown: [https://isglobal-brge.github.io/resource_bookdown/datashield.html#demo](https://isglobal-brge.github.io/resource_bookdown/datashield.html#demo)
+:::
 
 Now we need to 'resolve' the resource. That is, import the object into R. In that case, as the resource is an R object, internally `readRDS` function is called, but it is not necessary to be executed. Instead we use the function `as.resource.data.frame()`:
 
@@ -136,9 +164,13 @@ ds.summary("D")
 
 ## Describing data ('aggregate-type functions')
 
+:::{.callout-tip}
+## 📖 DataSHIELD Exploration Functions
+
 There are many data exploration functions already implemented into DataSHIELD: let's check it out at the wiki [https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/2733244417/Version+6.2.0](https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/2733244417/Version+6.2.0)
 
 Scroll down to "Data structure queries". Let's try out a few of these:
+:::
 
 ```{r}
 ds.dim(x="D", datasources = conns)
@@ -146,7 +178,11 @@ ds.dim(x="D", datasources = conns)
 ds.colnames(x="D", datasources = conns)
 ```
 
+:::{.callout-note}
+## ⚙️ Optional Parameters
+
 NOTE: writting `datasources = conns` is not required. This is just to emphasize that if you have several connections you need to specify which one is yours. By default, it missing it looks for your local environment
+:::
 
 ```{r}
 ls()
@@ -159,7 +195,11 @@ ds.dim("D")
 ds.colnames("D")
 ```
 
-What it is *mandatory* is to write the name of the data.frame with "".  
+:::{.callout-important}
+## ✅ Mandatory Syntax
+
+What it is *mandatory* is to write the name of the data.frame with "".
+:::
 
 ### We're going to be focus on hdl_cholesterol. 
 
@@ -277,7 +317,11 @@ ds.dataFrame(c("D", "hdl_sqrt", "hdl_log"), newobj = "D")
 ds.colnames("D")
 ```
 
+:::{.callout-exercise}
+## 🏋️ Exercise
+
 **EXERCISE: Using some of the functions above, explore the distribution of the variable "PM_BMI_CATEGORICAL" in dataframe "D".**
+:::
 
 
 Here you see this has returned a list of two tibbles separated into continuous and categorical information. For the categorical variables info is returned on ns, percentages and missingness within each category, whilst for continuous variables info is returned on mean, standard deviation, quantiles and also missingness.
@@ -285,13 +329,16 @@ Here you see this has returned a list of two tibbles separated into continuous a
 
 ## Sub-setting data
 
-In DataSHIELD there is one function that allows sub-setting of data, ds.dataFrameSubset .
+:::{.callout-note}
+## 📖 About Subsetting
+
+In DataSHIELD there is one function that allows sub-setting of data, `ds.dataFrameSubset`.
 
 You may wish to use it to:
-
-Subset a column of data by its "Class"
-Subset a dataframe to remove any "NA"s
-Subset a numeric column of a dataframe using a Boolean inequalilty
+- Subset a column of data by its "Class"
+- Subset a dataframe to remove any "NA"s  
+- Subset a numeric column of a dataframe using a Boolean inequality
+:::
 
 ```{r}
 # first find the column name you wish to refer to
@@ -423,17 +470,28 @@ dh.renameVars(
 ds.colnames("D")
 ```
 
-There are many more dsHelper functions designed to make common operations easier in datashield, check out the vignettes at: [https://github.com/timcadman/ds-helper/blob/master/vignettes/ds-helper-main-vignette.Rmd](https://github.com/timcadman/ds-helper/blob/master/vignettes/ds-helper-main-vignette.Rmd)
+:::{.callout-tip}
+## 🔗 More dsHelper Functions
 
+There are many more dsHelper functions designed to make common operations easier in datashield, check out the vignettes at: [https://github.com/timcadman/ds-helper/blob/master/vignettes/ds-helper-main-vignette.Rmd](https://github.com/timcadman/ds-helper/blob/master/vignettes/ds-helper-main-vignette.Rmd)
+:::
+
+:::{.callout-exercise}
+## 🏋️ Exercise
 
 **EXERCISE: try some of them (Transforming continuous variable to interquartile range; use dh.getStats(), ...)**
+:::
 
 
 ################################################################################
 
 ## Graphs
 
+:::{.callout-tip}
+## 📊 Data Visualization in DataSHIELD
+
 Visualising the data we are studying is extremely important to get a sense of it. While it may seem disclosive at first glance, only such graphs that are definitively non-disclosive have been implemented within the DataSHIELD project.
+:::
 
 ### Histograms
 
@@ -446,11 +504,21 @@ Let's create a histogram of the variable we've been investigating for much of th
 ds.histogram(x='D$hdl', datasources = conns)
 ```
 
+:::{.callout-exercise}
+## 🏋️ Exercise
+
 **Use the ds.histogram to explore the distribution of "D$hdl"**
+:::
 
 ### Scatterplots of two numerical variables
 
-When you generate a scatter plot, you can say that the data points that are displayed are not the actual values. The function gives you the choice on how to anonymise: either you anonymise the values by additional random noise; or you take the average of the k nearest neighbours. (for more details on how anonymisation methods are used for the generation of privacy-preserving visualisations you can have a look on the paper https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-020-00257-4)
+:::{.callout-important}
+## 🔒 Privacy Protection
+
+When you generate a scatter plot, you can say that the data points that are displayed are not the actual values. The function gives you the choice on how to anonymise: either you anonymise the values by additional random noise; or you take the average of the k nearest neighbours.
+
+For more details on privacy-preserving visualisations see: [https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-020-00257-4](https://epjdatascience.springeropen.com/articles/10.1140/epjds/s13688-020-00257-4)
+:::
 
 ```{r}
 ds.scatterPlot(x="D$hdl", y="D$bmi", datasources = conns)
@@ -507,7 +575,11 @@ dh.lmTab(
 ```
 
 
-We can perfome  Study-Level Meta-Analysis (SLMA) approach (**not work in our case**).  See [https://isglobal-brge.github.io/resource_bookdown/basic-statistical-analyses.html#analysis-from-a-multiple-studies](https://isglobal-brge.github.io/resource_bookdown/basic-statistical-analyses.html#analysis-from-a-multiple-studies)
+:::{.callout-note}
+## 📊 Study-Level Meta-Analysis
+
+We can perfome Study-Level Meta-Analysis (SLMA) approach (**not work in our case**). See [https://isglobal-brge.github.io/resource_bookdown/basic-statistical-analyses.html#analysis-from-a-multiple-studies](https://isglobal-brge.github.io/resource_bookdown/basic-statistical-analyses.html#analysis-from-a-multiple-studies)
+:::
 
 
 ### Modelling multiple variables and interactions
@@ -519,7 +591,12 @@ Also possible to model multiple explanatory variables and include interactions:
 glm_mod1<-ds.glm(formula="D$diabetes ~ D$bmi + D$hdl*D$sex", 
                  family='binomial', datasources = conns)
 ```
+
+:::{.callout-note}
+## 🔗 Interaction Terms
+
 The "*" between LAB_HDL and SEX means fit all possible main effects and interactions between the two covariates.
+:::
 
  
 
@@ -550,27 +627,41 @@ ds.ls()
 
 Also you can delete unwanted workspaces using the datashield.workspace_rm
 
-In Rstudio Server: DON'T forget to use the orange "quit the current R session" button (top right of browser screen) before closing the tab- otherwise you will experience an error message the next time you try to log in.
+:::{.callout-warning}
+## ⚠️ Important: RStudio Server Session
 
+In Rstudio Server: **DON'T forget to use the orange "quit the current R session" button** (top right of browser screen) before closing the tab - otherwise you will experience an error message the next time you try to log in.
+:::
 
 # Exercise
 
-1. Investigate how to perform survival analysis using `dsSurvival` package and run some analyses [https://pubmed.ncbi.nlm.nih.gov/35659747/](https://pubmed.ncbi.nlm.nih.gov/35659747/)
+:::{.callout-exercise}
+## 🏋️ Final Exercises
 
-2. We have access to 3 datasets corresponding to simulated data from UKBiobank available through CINECA study. This data reproduces the exact associations found at UKBiobank. Next table shows the data dictionary of XX selected variables. The three datasets are accessed in this Opal server (https://opal-demo.obiba.org/) in a project called GWAS as three different resources (named ega_phenotypes_1, ega_phenotypes_2 and ega_phenotypes_3).
+### Exercise 1: Survival Analysis
+1. Investigate how to perform survival analysis using `dsSurvival` package and run some analyses 
+2. Reference: [https://pubmed.ncbi.nlm.nih.gov/35659747/](https://pubmed.ncbi.nlm.nih.gov/35659747/)
 
+### Exercise 2: UKBiobank Simulated Data Analysis
 
+We have access to 3 datasets corresponding to simulated data from UKBiobank available through CINECA study. This data reproduces the exact associations found at UKBiobank. Next table shows the data dictionary of XX selected variables. The three datasets are accessed in this [Opal server](https://opal-demo.obiba.org/) in a project called GWAS as three different resources (named ega_phenotypes_1, ega_phenotypes_2 and ega_phenotypes_3).
 
-Then, load ONE of the three resources in R as data.frame’s using the functions available in the DSI library and answer the next questions using the  functions available at dsBaseClient package. 
+Then, load ONE of the three resources in R as data.frame's using the functions available in the DSI library and answer the next questions using the functions available at dsBaseClient package:
 
+**Tasks:**
 
 - Check that your loaded objects are of class data.frame
 - How many individuals have been diagnosed with diabetes by doctor (variable - diabetes_diagnosed_doctor)?
-- Obtain the same information stratified by sex (Hint: create a 2x2 table).
-- Create an histogram of the variable height by combining information across the three different datasets (Hint: type ?ds.histogram to see how to get this plot).
-- Create a correlation plot between bmi and weight combining data from the three studies (Hint: ?ds.scatterPlot).
-- Compute the correlation between bmiand weight.
-- Fit a regression model between cholesterol and weight.
-- Fit a regression model between diabetes (variable diabetes_diagnosed_doctor) and colesterol level (variable cholesterol). Note: remember that outcome variable (e.g. diabetes) must be a factor variable.
+- Obtain the same information stratified by sex
+<details class="hint"><summary></summary><div class="hint-content">create a 2x2 table</div></details>
+- Create an histogram of the variable height by combining information across the three different datasets
+<details class="hint"><summary></summary><div class="hint-content">type ?ds.histogram to see how to get this plot</div></details>
+- Create a correlation plot between bmi and weight combining data from the three studies
+<details class="hint"><summary></summary><div class="hint-content">?ds.scatterPlot</div></details>
+- Compute the correlation between bmi and weight
+- Fit a regression model between cholesterol and weight
+- Fit a regression model between diabetes (variable diabetes_diagnosed_doctor) and colesterol level (variable cholesterol).
+<details class="hint"><summary></summary><div class="hint-content">remember that outcome variable (e.g. diabetes) must be a factor variable</div></details>
 - Fit the same model adjusted by bmi. Is still cholesterol associated with diabetes?
 - Is there any interaction between cholesterol and sex adjusted by bmi?
+:::
