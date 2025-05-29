@@ -35,9 +35,13 @@ devtools::install_github("timcadman/ds-helper")
 
 | Time          | Topic                                                    |
 |---------------|----------------------------------------------------------|
-| 8:30 - 9:30   | Introduction to DataSHIELD theory                        |
-| 9:30 - 10:30  | Workshop illustrating how to analyze CORDELIA data       |
-| 10:30 - 11:30 | Hands-on exercises and practice                          |
+| 9:00 - 10:00  | Introduction to DataSHIELD theory                       |
+| 10:00 - 10:10 | Break                                                    |
+| 10:10 - 11:10 | Workshop illustrating how to analyze CORDELIA data      |
+| 11:10 - 12:10 | Hands-on exercises and practice                          |
+| 12:10 - 12:20 | Break                                                    |
+| 12:20 - 13:00 | Advanced DataSHIELD workshop                             |
+| 13:00 - 14:00 | Final practical exercises                                |
 
 ---
 
@@ -47,3 +51,4 @@ devtools::install_github("timcadman/ds-helper")
 
 **[→ Go to the workshop materials](workshop_cordelia.html)**
 
+**Want just the R code?** Download the complete R script: **[workshop_cordelia.R](workshop_cordelia.R)** - This file contains all the code chunks in a clean, executable format.

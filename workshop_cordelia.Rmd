@@ -13,6 +13,16 @@ knitr::opts_chunk$set(
 )
 ```
 
+:::{.callout-important}
+## 📥 Download R Script
+
+**Want to work with a pure R script?** You can download the complete R code from this workshop:
+
+**[📄 Download workshop_cordelia.R](workshop_cordelia.R)**
+
+This file contains all the R code chunks from this workshop in a clean, executable script format.
+:::
+
 :::{.callout-tip}
 ## 📚 INFORMATION FOR NEWCOMERS TO RSTUDIO NOTEBOOKS
 
@@ -36,6 +46,7 @@ The plan for this workshop is as follows:
 - Data manipulation with dsHelper
 - Making graphs
 - Performing regression analysis
+- Practical exercises
 :::
 
 ## Installing DataSHIELD
