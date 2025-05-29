@@ -317,7 +317,7 @@ ds.dataFrame(c("D", "hdl_sqrt", "hdl_log"), newobj = "D")
 ds.colnames("D")
 ```
 
-:::{.callout-exercise}
+:::{.callout-tip}
 ## 🏋️ Exercise
 
 **EXERCISE: Using some of the functions above, explore the distribution of the variable "PM_BMI_CATEGORICAL" in dataframe "D".**
@@ -476,7 +476,7 @@ ds.colnames("D")
 There are many more dsHelper functions designed to make common operations easier in datashield, check out the vignettes at: [https://github.com/timcadman/ds-helper/blob/master/vignettes/ds-helper-main-vignette.Rmd](https://github.com/timcadman/ds-helper/blob/master/vignettes/ds-helper-main-vignette.Rmd)
 :::
 
-:::{.callout-exercise}
+:::{.callout-tip}
 ## 🏋️ Exercise
 
 **EXERCISE: try some of them (Transforming continuous variable to interquartile range; use dh.getStats(), ...)**
@@ -504,7 +504,7 @@ Let's create a histogram of the variable we've been investigating for much of th
 ds.histogram(x='D$hdl', datasources = conns)
 ```
 
-:::{.callout-exercise}
+:::{.callout-tip}
 ## 🏋️ Exercise
 
 **Use the ds.histogram to explore the distribution of "D$hdl"**
@@ -633,16 +633,17 @@ Also you can delete unwanted workspaces using the datashield.workspace_rm
 In Rstudio Server: **DON'T forget to use the orange "quit the current R session" button** (top right of browser screen) before closing the tab - otherwise you will experience an error message the next time you try to log in.
 :::
 
-# Exercise
+# 🏋️ Final Exercises
 
-:::{.callout-exercise}
-## 🏋️ Final Exercises
+:::{.callout-tip}
+## Exercise 1: Survival Analysis
 
-### Exercise 1: Survival Analysis
 1. Investigate how to perform survival analysis using `dsSurvival` package and run some analyses 
-2. Reference: [https://pubmed.ncbi.nlm.nih.gov/35659747/](https://pubmed.ncbi.nlm.nih.gov/35659747/)
+2. **Reference**: [https://pubmed.ncbi.nlm.nih.gov/35659747/](https://pubmed.ncbi.nlm.nih.gov/35659747/)
+:::
 
-### Exercise 2: UKBiobank Simulated Data Analysis
+:::{.callout-tip}
+## Exercise 2: UKBiobank Simulated Data Analysis
 
 We have access to 3 datasets corresponding to simulated data from UKBiobank available through CINECA study. This data reproduces the exact associations found at UKBiobank. Next table shows the data dictionary of XX selected variables. The three datasets are accessed in this [Opal server](https://opal-demo.obiba.org/) in a project called GWAS as three different resources (named ega_phenotypes_1, ega_phenotypes_2 and ega_phenotypes_3).
 
@@ -653,15 +654,15 @@ Then, load ONE of the three resources in R as data.frame's using the functions a
 - Check that your loaded objects are of class data.frame
 - How many individuals have been diagnosed with diabetes by doctor (variable - diabetes_diagnosed_doctor)?
 - Obtain the same information stratified by sex
-<details class="hint"><summary></summary><div class="hint-content">create a 2x2 table</div></details>
+<details class="hint"><summary></summary><div class="hint-content">Create a 2x2 table</div></details>
 - Create an histogram of the variable height by combining information across the three different datasets
-<details class="hint"><summary></summary><div class="hint-content">type ?ds.histogram to see how to get this plot</div></details>
-- Create a correlation plot between bmi and weight combining data from the three studies
+<details class="hint"><summary></summary><div class="hint-content">Type ?ds.histogram to see how to get this plot</div></details>
+- Create a correlation plot between BMI and weight combining data from the three studies
 <details class="hint"><summary></summary><div class="hint-content">?ds.scatterPlot</div></details>
-- Compute the correlation between bmi and weight
+- Compute the correlation between BMI and weight
 - Fit a regression model between cholesterol and weight
 - Fit a regression model between diabetes (variable diabetes_diagnosed_doctor) and colesterol level (variable cholesterol).
-<details class="hint"><summary></summary><div class="hint-content">remember that outcome variable (e.g. diabetes) must be a factor variable</div></details>
-- Fit the same model adjusted by bmi. Is still cholesterol associated with diabetes?
-- Is there any interaction between cholesterol and sex adjusted by bmi?
+<details class="hint"><summary></summary><div class="hint-content">Remember that outcome variable (e.g. diabetes) must be a factor variable</div></details>
+- Fit the same model adjusted by BMI. Is still cholesterol associated with diabetes?
+- Is there any interaction between cholesterol and sex adjusted by BMI?
 :::

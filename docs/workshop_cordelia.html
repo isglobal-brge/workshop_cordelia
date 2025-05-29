@@ -161,7 +161,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#using-dshelper-to-retrieve-statistics-in-a-neater-format." id="toc-using-dshelper-to-retrieve-statistics-in-a-neater-format." class="nav-link" data-scroll-target="#using-dshelper-to-retrieve-statistics-in-a-neater-format.">Using dsHelper to retrieve statistics in a neater format.</a></li>
   </ul></li>
   <li><a href="#manipulating-data-assign-type-functions" id="toc-manipulating-data-assign-type-functions" class="nav-link" data-scroll-target="#manipulating-data-assign-type-functions">Manipulating data (‘assign-type’ functions)</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">🏋️ Exercise</a></li>
   <li><a href="#sub-setting-data" id="toc-sub-setting-data" class="nav-link" data-scroll-target="#sub-setting-data">Sub-setting data</a>
   <ul class="collapse">
   <li><a href="#sub-setting-to-remove-nas" id="toc-sub-setting-to-remove-nas" class="nav-link" data-scroll-target="#sub-setting-to-remove-nas">Sub-setting to remove NAs</a></li>
@@ -173,13 +172,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#create-a-subset-of-columns-by-a-vector-of-column-names" id="toc-create-a-subset-of-columns-by-a-vector-of-column-names" class="nav-link" data-scroll-target="#create-a-subset-of-columns-by-a-vector-of-column-names">Create a subset of columns by a vector of column names</a></li>
   <li><a href="#rename-variables" id="toc-rename-variables" class="nav-link" data-scroll-target="#rename-variables">Rename variables</a></li>
   </ul></li>
-  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">🏋️ Exercise</a></li>
   <li><a href="#graphs" id="toc-graphs" class="nav-link" data-scroll-target="#graphs">Graphs</a>
   <ul class="collapse">
   <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms">Histograms</a></li>
-  </ul></li>
-  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">🏋️ Exercise</a></li>
   <li><a href="#scatterplots-of-two-numerical-variables" id="toc-scatterplots-of-two-numerical-variables" class="nav-link" data-scroll-target="#scatterplots-of-two-numerical-variables">Scatterplots of two numerical variables</a></li>
+  </ul></li>
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
   <ul class="collapse">
   <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression">Simple Linear Regression</a></li>
@@ -187,14 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#at-the-end-of-your-rstudio-server-analysis" id="toc-at-the-end-of-your-rstudio-server-analysis" class="nav-link" data-scroll-target="#at-the-end-of-your-rstudio-server-analysis">At the end of your RStudio Server analysis:</a></li>
   </ul></li>
-  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise</a>
-  <ul class="collapse">
-  <li><a href="#final-exercises" id="toc-final-exercises" class="nav-link" data-scroll-target="#final-exercises">🏋️ Final Exercises</a>
-  <ul class="collapse">
-  <li><a href="#exercise-1-survival-analysis" id="toc-exercise-1-survival-analysis" class="nav-link" data-scroll-target="#exercise-1-survival-analysis">Exercise 1: Survival Analysis</a></li>
-  <li><a href="#exercise-2-ukbiobank-simulated-data-analysis" id="toc-exercise-2-ukbiobank-simulated-data-analysis" class="nav-link" data-scroll-target="#exercise-2-ukbiobank-simulated-data-analysis">Exercise 2: UKBiobank Simulated Data Analysis</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#final-exercises" id="toc-final-exercises" class="nav-link" data-scroll-target="#final-exercises">🏋️ Final Exercises</a></li>
   </ul>
 </nav>
     </div>
@@ -784,12 +774,21 @@ $cordelia
 [37] "HTA_tot"         "diabetes_tot"    "hdl_sqrt"        "hdl_log"        </code></pre>
 </div>
 </div>
-</section>
-<section id="exercise" class="level2 callout-exercise">
-<h2 class="anchored" data-anchor-id="exercise">🏋️ Exercise</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🏋️ Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>EXERCISE: Using some of the functions above, explore the distribution of the variable “PM_BMI_CATEGORICAL” in dataframe “D”.</strong></p>
-</section>
+</div>
+</div>
 <p>Here you see this has returned a list of two tibbles separated into continuous and categorical information. For the categorical variables info is returned on ns, percentages and missingness within each category, whilst for continuous variables info is returned on mean, standard deviation, quantiles and also missingness.</p>
+</section>
 <section id="sub-setting-data" class="level2">
 <h2 class="anchored" data-anchor-id="sub-setting-data">Sub-setting data</h2>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1141,14 +1140,23 @@ $cordelia
 <p>There are many more dsHelper functions designed to make common operations easier in datashield, check out the vignettes at: <a href="https://github.com/timcadman/ds-helper/blob/master/vignettes/ds-helper-main-vignette.Rmd">https://github.com/timcadman/ds-helper/blob/master/vignettes/ds-helper-main-vignette.Rmd</a></p>
 </div>
 </div>
-</section>
-</section>
-<section id="exercise-1" class="level2 callout-exercise">
-<h2 class="anchored" data-anchor-id="exercise-1">🏋️ Exercise</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🏋️ Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>EXERCISE: try some of them (Transforming continuous variable to interquartile range; use dh.getStats(), …)</strong></p>
-</section>
+</div>
+</div>
 <section id="section-2" class="level80">
 <p class="heading"></p>
+</section>
+</section>
 </section>
 <section id="graphs" class="level2">
 <h2 class="anchored" data-anchor-id="graphs">Graphs</h2>
@@ -1205,11 +1213,19 @@ attr(,"class")
 [1] "histogram"</code></pre>
 </div>
 </div>
-</section>
-</section>
-<section id="exercise-2" class="level2 callout-exercise">
-<h2 class="anchored" data-anchor-id="exercise-2">🏋️ Exercise</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🏋️ Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>Use the ds.histogram to explore the distribution of “D$hdl”</strong></p>
+</div>
+</div>
 </section>
 <section id="scatterplots-of-two-numerical-variables" class="level3">
 <h3 class="anchored" data-anchor-id="scatterplots-of-two-numerical-variables">Scatterplots of two numerical variables</h3>
@@ -1248,6 +1264,7 @@ attr(,"class")
 </div>
 <section id="section-3" class="level80">
 <p class="heading"></p>
+</section>
 </section>
 </section>
 <section id="analysis" class="level2">
@@ -1445,19 +1462,34 @@ $cordelia$objects.found
 </div>
 </section>
 </section>
-<section id="exercise-3" class="level1">
-<h1>Exercise</h1>
-<section id="final-exercises" class="level2 callout-exercise">
-<h2 class="anchored" data-anchor-id="final-exercises">🏋️ Final Exercises</h2>
-<section id="exercise-1-survival-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-1-survival-analysis">Exercise 1: Survival Analysis</h3>
+<section id="final-exercises" class="level1">
+<h1>🏋️ Final Exercises</h1>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 1: Survival Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>Investigate how to perform survival analysis using <code>dsSurvival</code> package and run some analyses</li>
-<li>Reference: <a href="https://pubmed.ncbi.nlm.nih.gov/35659747/">https://pubmed.ncbi.nlm.nih.gov/35659747/</a></li>
+<li><strong>Reference</strong>: <a href="https://pubmed.ncbi.nlm.nih.gov/35659747/">https://pubmed.ncbi.nlm.nih.gov/35659747/</a></li>
 </ol>
-</section>
-<section id="exercise-2-ukbiobank-simulated-data-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-2-ukbiobank-simulated-data-analysis">Exercise 2: UKBiobank Simulated Data Analysis</h3>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise 2: UKBiobank Simulated Data Analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We have access to 3 datasets corresponding to simulated data from UKBiobank available through CINECA study. This data reproduces the exact associations found at UKBiobank. Next table shows the data dictionary of XX selected variables. The three datasets are accessed in this <a href="https://opal-demo.obiba.org/">Opal server</a> in a project called GWAS as three different resources (named ega_phenotypes_1, ega_phenotypes_2 and ega_phenotypes_3).</p>
 <p>Then, load ONE of the three resources in R as data.frame’s using the functions available in the DSI library and answer the next questions using the functions available at dsBaseClient package:</p>
 <p><strong>Tasks:</strong></p>
@@ -1469,7 +1501,7 @@ $cordelia$objects.found
 <summary>
 </summary>
 <div class="hint-content">
-create a 2x2 table
+Create a 2x2 table
 </div>
 </details></li>
 <li>Create an histogram of the variable height by combining information across the three different datasets
@@ -1477,10 +1509,10 @@ create a 2x2 table
 <summary>
 </summary>
 <div class="hint-content">
-type ?ds.histogram to see how to get this plot
+Type ?ds.histogram to see how to get this plot
 </div>
 </details></li>
-<li>Create a correlation plot between bmi and weight combining data from the three studies
+<li>Create a correlation plot between BMI and weight combining data from the three studies
 <details class="hint">
 <summary>
 </summary>
@@ -1488,21 +1520,21 @@ type ?ds.histogram to see how to get this plot
 ?ds.scatterPlot
 </div>
 </details></li>
-<li>Compute the correlation between bmi and weight</li>
+<li>Compute the correlation between BMI and weight</li>
 <li>Fit a regression model between cholesterol and weight</li>
 <li>Fit a regression model between diabetes (variable diabetes_diagnosed_doctor) and colesterol level (variable cholesterol).
 <details class="hint">
 <summary>
 </summary>
 <div class="hint-content">
-remember that outcome variable (e.g.&nbsp;diabetes) must be a factor variable
+Remember that outcome variable (e.g.&nbsp;diabetes) must be a factor variable
 </div>
 </details></li>
-<li>Fit the same model adjusted by bmi. Is still cholesterol associated with diabetes?</li>
-<li>Is there any interaction between cholesterol and sex adjusted by bmi?</li>
+<li>Fit the same model adjusted by BMI. Is still cholesterol associated with diabetes?</li>
+<li>Is there any interaction between cholesterol and sex adjusted by BMI?</li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
 
 </section>
