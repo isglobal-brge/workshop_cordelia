@@ -1,0 +1,7 @@
+/.quarto/
+/.vscode/
+.DS_Store
+*.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata 

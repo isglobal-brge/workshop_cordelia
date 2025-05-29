@@ -1,0 +1,20 @@
+project:
+  type: website
+  title: "DataSHIELD CORDELIA Workshop"
+  output-dir: docs
+
+website:
+  title: "DataSHIELD CORDELIA Workshop"
+  navbar:
+    logo: logo_brge.png
+    left:
+      - href: index.qmd
+        text: Home
+      - href: workshop_cordelia.Rmd
+        text: Workshop
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
