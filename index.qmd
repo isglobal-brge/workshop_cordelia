@@ -35,15 +35,13 @@ devtools::install_github("timcadman/ds-helper")
 
 | Time          | Topic                                                    |
 |---------------|----------------------------------------------------------|
-| 9:00 - 10:00  | Introduction to DataSHIELD theory                       |
+| 9:00 - 10:00  | Introduction to DataSHIELD theory                        |
 | 10:00 - 10:10 | Break                                                    |
-| 10:10 - 11:10 | Workshop illustrating how to analyze CORDELIA data      |
+| 10:10 - 11:10 | Workshop illustrating how to analyze CORDELIA data       |
 | 11:10 - 12:10 | Hands-on exercises and practice                          |
 | 12:10 - 12:20 | Break                                                    |
 | 12:20 - 13:00 | Advanced DataSHIELD workshop                             |
 | 13:00 - 14:00 | Final practical exercises                                |
-
----
 
 # Workshop Materials
 
@@ -52,3 +50,15 @@ devtools::install_github("timcadman/ds-helper")
 **[→ Go to the workshop materials](workshop_cordelia.html)**
 
 **Want just the R code?** Download the complete R script: **[workshop_cordelia.R](workshop_cordelia.R)** - This file contains all the code chunks in a clean, executable format.
+
+# Supplementary Materials
+
+For additional reading and complementary resources, explore these academic publications and documentation:
+
+- **[DataSHIELD: taking the analysis to the data, not the data to the analysis](https://academic.oup.com/bioinformaticsadvances/article/5/1/vbaf046/8068803)** - *Bioinformatics Advances* (2025)
+
+- **[BRGE DataSHIELD Bookdown](https://isglobal-brge.github.io/resource_bookdown/)**
+
+- **[DataSHIELD: resolving a conflict in contemporary bioinformatics—performing a pooled analysis of individual-level data without sharing the data](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008880)** - *PLoS Computational Biology* (2021)
+
+- **[Harmonizing and meta-analyzing omics data with a comprehensive pipeline](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012626)** - *PLoS Computational Biology* (2024)
